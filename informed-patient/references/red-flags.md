@@ -53,7 +53,7 @@ Surface 1-3 of the most relevant flags per user situation. Each flag should be a
 
 ### 10. Metascience concerns
 **What it means:** There are controversies in the research literature itself — conflicting meta-analyses, clinical guidelines that haven't been updated to reflect recent evidence, known issues with replication, or documented gaps between evidence and clinical practice.
-**Why it matters:** Sometimes the problem isn't that evidence is missing, but rather that the evidence base itself is contested, or that clinical practice hasn't caught up with the best available evidence. This may means you may encounter conflicting recommendations, and it may be particularly important for patients who are understudied or in a context with less access to cutting-edge clinical care to be aware of these issues.
+**Why it matters:** Sometimes the problem isn't that evidence is missing, but rather that the evidence base itself is contested, or that clinical practice hasn't caught up with the best available evidence. This may mean you may encounter conflicting recommendations, and it may be particularly important for patients who are understudied or in a context with less access to cutting-edge clinical care to be aware of these issues.
 **Suggested action:** "Ask your clinician: Are there recent studies or updated guidelines that might change the approach? If you get conflicting advice from different specialists, ask each one what evidence they're basing their recommendation on."
 
 ## How to use these flags
