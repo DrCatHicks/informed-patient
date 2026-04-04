@@ -28,7 +28,7 @@ For more on Claude Code plugins, see [the plugin documentation](https://code.cla
 
 ## How to use it
 
-This skill is **opt-in only** — it won't activate automatically when you ask health questions. To use it, explicitly tell Claude you'd like to use the informed-patient skill, then describe your situation.
+This skill is **opt-in** — it shouldn't activate automatically when you ask health questions. To use it, explicitly tell Claude you'd like to use the informed-patient skill, then describe your situation. Modify trigger instructions to change this.
 
 Claude will ask questions before searching. This interview is the foundation for the evidence review. The more specific and accurate your inputs, the more useful the search will be.
 
