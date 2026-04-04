@@ -65,9 +65,9 @@ At the end of the exercise, output is saved in a **Health Evidence Review** that
 - You're curious about the evidence about a new medicine and how it's been studied
 - You want to track and consider the possible connections between disparate symptoms 
 
-It is impossible to anticipate every possible medical scenario. This Skill has complex instructions, and is meant to provide useful instructions to Claude, but the quality and depth of the information you give it will change how specific and helpful its search will be. In particular, being specific, depthful and accurate in the symptom/question dialogue will make the search more useful. 
+It is impossible to anticipate every possible medical scenario. This Skill has complex instructions, and is meant to provide useful instructions to Claude, but the quality and depth of the information you give it will change how specific and helpful its search will be. 
 
-You can actively experiment with adapting this skill to your needs. You may want to consider: 
+You can experiment with adapting this skill to your needs. You may want to consider: 
 
 - Combining this skill with structured access to full-text scientific libraries, if available, such as the PubMed Connector (https://claude.com/resources/tutorials/using-the-pubmed-connector-in-claude) 
 - Setting specific evidence flags that you are concerned about such as evaluating evidence in light of personalized context (for instance, "I want to know if this condition has been studied in people with high blood pressure")
@@ -77,11 +77,11 @@ You can actively experiment with adapting this skill to your needs. You may want
 
 ## More detail on the choices in this Skill Design
 
-This skill is opinionatedly designed to use evidence science guardrails in the background, as well as take advantage of Claude's ability to help you create your own personalized patient inventory. It is also structured to push Claude against speculating or "fill in the answer" defaults, to be honest about what it found, what it couldn't find, to provide evidence for how much confidence you should have in competing hypotheses, as well as suggest directions that would confirm or deny working hypotheses or scenarios. 
+This skill is opinionatedly designed to use evidence guardrails in the background, as well as take advantage of Claude's ability to help you create your own personalized patient inventory. It is also structured to push Claude against speculating or "fill in the answer" defaults, to be honest about what it found, what it couldn't find, to provide evidence for how much confidence you should have in competing hypotheses, as well as suggest directions that would confirm or deny working hypotheses & scenarios. 
 
-My aim was to provide a practical thinking tool that strikes a balance between giving you assistance that lightens the load in searching complex literature, but also provides you with clarity and directions for investigation. You are centered as the decision-maker: you control the symptom description, rank questions, and have access to records for further searching or your own cross-verification. I wanted to create a tool that would help people who aren't researchers, scientists or doctors, and who are dealing with something hard may have limited time and energy to wade through complex medical details. Therefore, you can expand or contract your use of the Skill; a quick session of 10 minutes is enough for a review, but you can also run multiple reviews in a row to continue investigating. 
+My aim was to provide a practical thinking tool that strikes a balance between giving you assistance that lightens the load in searching complex literature, but also gives clarity and directions for investigation. You are centered as the decision-maker: you control the symptom description, rank questions, and have access to records for further searching or your own cross-verification. I wanted to create a tool that would help people who aren't researchers, scientists or doctors, and who are dealing with something hard may have limited time and energy to wade through complex medical details. Therefore, you can expand or contract your use of the Skill; a quick session of 10 minutes is enough for a review, but you can also run multiple reviews in a row to continue investigating. 
 
-The skill also gives Claude with a structured set of instructions for assessing and flagging key evidence quality indicators, such as missing evidence, understudied conditions, or barriers in care. These are currently set as background references, but you may 
+The references give Claude with a structured set of instructions for assessing and flagging evidence red flags, such as missing evidence, understudied conditions, or barriers in care. These are currently set as background references, but you may wish to read and modify them yourself.
 
 Thinking about your health is high stakes, and we are often cognitively biased toward wanting to find a single answer. To help you get better answers, this Skill is opinionated about holding a high standard of evidence and instructs Claude to try to counter some of the aggressively confirmatory patterns in AI chatbots used for health. In the case of trying to explain symptoms, Claude should explicitly push you to consider multiple hypotheses and evaluate the strength of evidence, as well as generate suggestions of evidence that would strengthen or weaken confidence in the hypothesis.  
 
@@ -118,9 +118,9 @@ These design choices are reflected in:
 
 ## Privacy
 
-Using AI for health questions is a contentious topic. As noted above, I believe any use of AI for health questions carries risk of receiving misleading errors. On the other hand, patients facing delay of care, complex diagnoses and difficulty accessing scientific literature suffer from this lack of access, and struggle in the face of great need. I decided to write this Skill because I found that trade-off worth it, and you may decide it is worth it too. 
+Using AI for health questions is a loaded topic. As noted above, I believe any use of AI for health questions carries risk of receiving misleading errors. On the other hand, patients facing delay of care, complex diagnoses and difficulty accessing scientific literature suffer from this lack of access, and struggle in the face of great need. I decided to write this Skill because I found that trade-off worth it, and you may decide it is worth it too. 
 
-However, I am mindful of the privacy risks with AI that remain unsolved. My aim in providing this Skill is to give you an example of choices I have made myself, in the hopes that it might help more people get higher quality care and reduce their suffering. I cannot make a privacy and personal data decision for you, but here are some aspects that I think are important to think about:
+However, I am mindful of the privacy risks with AI that remain unsolved. My aim in providing this Skill is to give you an example of choices I have made myself, in the hopes that it might help more people get higher quality care and reduce their suffering. I cannot make a privacy and data decision for you, but here are some aspects that I think are important to think about:
 
 You should make an informed choice about all information you give to Claude. This skill can be used to ask generic medical questions without giving specific dates or condition details. However using this skill maximally for most people likely involves sharing health information with an AI system. The steps below won't eliminate privacy risks, but they might be steps you can think about as you weigh your decision. Read through and make the choices that are right for your situation.
 
@@ -134,19 +134,15 @@ Before using this skill, consider whether you want your conversation used to tra
 
 More detail: [Anthropic Privacy Center](https://privacy.claude.com) · [Is my data used for model training?](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)
 
-### Consider sharing your health situation, not your identity
+### Consider sharing a health research question, not your identity
 
-Many questions don't require personal information. This skill doesn't need your name, date of birth, location, employer, insurance information, or any other identifying details. It can work on symptoms, history, and medical context alone.
+Many questions don't require personal information. This skill doesn't need your name, date of birth, location, employer, insurance information, or any other identifying details. It can work on symptoms, scenario questions, and medical context alone.
 
-Conditions that might carry real-world stigma warrant extra care. Consider how specific you need to be and what information you are trying to get help with. The skill can work with "a condition that affects my immune system" rather than a named diagnosis if you prefer. 
+Conditions that might carry real-world stigma warrant extra care. Consider how specific you need to be and what information you are trying to get help with. The skill can work with "I want to learn about a condition that affects this system of the body" or "evaluate what the science says about this condition" rather than a named diagnosis if you prefer. 
 
 ### Consider using a personal account, not a work account
 
 If you access Claude through an employer's Teams or Enterprise plan, your employer may have administrative visibility into your conversations. You may want to consider only using a personal Claude account for health conversations. 
-
-### Consider deleting conversations after you have your document
-
-Once the output file is written, you could consider deleting the conversation. 
 
 ---
 
@@ -154,10 +150,9 @@ Once the output file is written, you could consider deleting the conversation.
 
 Specific limitations to be aware of:
 
-- **Citation hallucination risk.** The skill instructs Claude to include source URLs and flag unverifiable identifiers, but hallucinated citations remain possible. Always click the links in the Sources Reviewed section and verify that the title and finding match what's described.
+- **Citation hallucination risk.** The skill instructs Claude to include source URLs and flag unverifiable identifiers, but hallucinated citations remain possible. Always click the links in the Sources Reviewed section and verify that the title and finding match what's described. 
 - **Search stops when evidence is solid.** The skill works through a source hierarchy (Cochrane → guidelines → primary research → FDA → patient advocacy) but stops when the evidence base is sufficient to support the user's questions. For well-studied conditions with strong Cochrane and guideline coverage, lower-priority sources may be skipped. If you want to force a complete search through all source types, tell Claude explicitly: "Search all source types in the hierarchy even if you find strong evidence early."
-- **Search tool limitations — PubMed site: queries.** The skill instructs Claude to run `site:pubmed.ncbi.nlm.nih.gov` queries, but web search tools don't reliably honor `site:` operators. Claude will fall back to general queries that return PubMed/PMC results, but this is less precise than a native PubMed search. **Users with a PubMed MCP connector** can layer that in for more reliable and comprehensive PubMed retrieval — tell Claude to use it when searching medical literature.
-- **Other site-specific queries (Cochrane, NICE)** are subject to the same tool limitation. Results have been verified for well-studied conditions (e.g., hypertension), but reliability across all conditions is not guaranteed.
+- **Search tool limitations.** Claude's web search tool doesn't support `site:` scoped queries, so the skill uses keyword strategies (e.g., `[condition] systematic review PubMed`) to surface results from target databases. This is less precise than searching PubMed or Cochrane directly. Users who want comprehensive PubMed coverage should connect the **PubMed MCP connector** and tell Claude to use it when searching medical literature — that's the reliable upgrade path.
 - **Not clinically validated.** This skill has not been reviewed by clinicians or evaluated in a clinical context. It is a structured reasoning aid, not a clinical instrument.
 - **Evidence sources are primarily US and UK-based.** The search hierarchy prioritizes sources I am most familiar with, Cochrane, NICE, AHRQ, the USPSTF, and PubMed. These are high-quality, widely used bodies, but they reflect a particular slice of the global clinical evidence landscape. Guidelines from the European Medicines Agency, WHO, or national health bodies in other countries may differ and may be equally or more relevant depending on where you receive care. If you have specific sources you want prioritized, tell Claude explicitly at the start of the session: "Also search [source] as part of the evidence hierarchy." The skill is designed to be adaptable.
 
