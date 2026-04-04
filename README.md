@@ -2,7 +2,7 @@
 
 This Claude Skill provides a framework to help you use Claude to research medical evidence to inform specific health questions, primarily designed around use cases like trying to understand and organize questions about symptoms, preparing for an upcoming medical appointment, and gathering evidence for either differential diagnosis questions or condition progression. 
 
-When you ask a medical question, Claude will walk you through a semi-structured cognitive interview to elicit context for its search, then conduct a search following a set of guidelines for evidence robustness. The skill provides two potential search "modes": by default it uses a more structured search across a defined evidence source hierarchy, but suggests an open search mode for scenarios where you raise a more complex questions that falls between conditions, when you want a more exploratory mode, or when the opinionated search results are thin. 
+When you ask a medical question, Claude will walk you through a semi-structured cognitive interview to elicit context for its search, then conduct a search following a set of guidelines for evidence robustness. The skill provides two potential search "modes": by default it uses a more structured search across a defined evidence source hierarchy, but can use an open search mode for scenarios where you raise a more complex questions that falls between conditions, when you want a more exploratory mode, or when the opinionated search results are thin. 
 
 Alongside searching and synthesizing sources, Claude will weigh the strength of evidence or relevant concerns according to a set of evidence "red flags." The results will be shared in a "health evidence review," including sources, search terms, and evidence red flags to be aware of, and questions generated from the exercise to bring to your healthcare team. 
 
@@ -24,27 +24,23 @@ Restart Claude Code to activate
 
 For more on Claude Code plugins, see [the plugin documentation](https://code.claude.com/docs/en/plugins).
 
-## What this Skill is for
+---
 
-Using AI for health is consistently one of the top use cases documented for emerging AI tools. Many people turn to AI for help when trying to make sense of a diagnosis, prepare for a specialist appointment, or understand what the research actually says about a condition. [People also struggle with recognized risks of using AI, such as inaccurate results, encouragement of overly confirmatory thinking, and lack of source clarity](https://www.nytimes.com/2026/04/02/well/live/ai-illness-claude-chatgpt.html).
+## How to use it
 
-The Informed-Patient Skill runs a structured process to help you use AI with an evidence-grounded process to help you get higher quality results. Using this Skill, Claude will dialogue with you to create a guided symptom interview, will design a literature search according to a structured evidence hierarchy, and will create a structured document you can bring to your next medical appointment or use to document your questions. 
+This skill is **opt-in only** — it won't activate automatically when you ask health questions. To use it, explicitly tell Claude you'd like to use the informed-patient skill, then describe your situation.
 
-This skill is designed to help you use evidence science guardrails, as well as take advantage of Claude's ability to create a personalized symptom inventory. It is also structured to push Claude against speculating or "fill in the answer" defaults, to be honest about what it found, what it couldn't find, to provide evidence for how much confidence you should have in competing hypotheses, as well as suggest directions that would confirm or deny working hypotheses or scenarios. 
-
-The skill also gives Claude with a structured set of instructions for assessing and flagging key evidence quality indicators, such as missing evidence, understudied conditions, or barriers in care. In the case of trying to explain symptoms, Claude should explicitly push you to consider multiple hypotheses and evaluate the strength of evidence, as well as generate suggestions of evidence that would strengthen or weaken confidence in the hypothesis.
-
-**This is a thinking tool, not a diagnostic tool.** 
-
-This Skill is meant to help you organize your experience and evaluate evidence. It should not be used to tell you what you have or what to do about it, and explicitly instructs Claude to offer a thinking aid in navigating the research and clinical literature. 
-
-While I have continually tested the sources this Skill produces and refined the Skill across many disparate searches, remember it is always possible for AI to be inaccurate. 
-
-You can use the EVALUATION.md file as a starting place to check that this Skill is performing as expected across different scenarios. 
+Claude will ask questions before searching. This interview is the foundation for the evidence review. The more specific and accurate your inputs, the more useful the search will be.
 
 ---
 
-## What it produces
+## What it does
+
+**This is a thinking tool, not a diagnostic tool.** 
+
+Using AI for health is consistently one of the top use cases documented for emerging AI tools. Many people turn to AI for help when trying to make sense of a diagnosis, prepare for a specialist appointment, or understand what the research actually says about a condition. [People also struggle with recognized risks of using AI, such as inaccurate results, encouragement of overly confirmatory thinking, and lack of source clarity](https://www.nytimes.com/2026/04/02/well/live/ai-illness-claude-chatgpt.html).
+
+The Informed-Patient Skill runs a structured process to help you use Claude with evidence science-informed instructions to create an "evidence review" around a specific health question. Using this Skill, Claude will dialogue with you to create a guided symptom/or medical scenario overview, will design a literature search according to a structured evidence hierarchy, and will create a structured document you can bring to your next medical appointment or use to document your questions. 
 
 At the end of the exercise, output is saved in a **Health Evidence Review** that includes:
 
@@ -65,43 +61,54 @@ At the end of the exercise, output is saved in a **Health Evidence Review** that
 - You're curious about the evidence about a new medicine and how it's been studied
 - You want to track and consider the possible connections between disparate symptoms 
 
-It is impossible to anticipate every possible medical scenario. This Skill has complex instructions, and is meant to provide useful instructions to Claude, but the quality and depth of the information you give it will change how specific and helpful its search will be. In particular, being specific and accurate in the symptom/question dialogue will make the search more useful. 
+It is impossible to anticipate every possible medical scenario. This Skill has complex instructions, and is meant to provide useful instructions to Claude, but the quality and depth of the information you give it will change how specific and helpful its search will be. In particular, being specific, depthful and accurate in the symptom/question dialogue will make the search more useful. 
 
 You can actively experiment with adapting this skill to your needs. You may want to consider: 
 
-- Designing your own symptom inventory tracking prior to using the Skill, and re-using it for continuing searches, or providing it as context to Claude
 - Combining this skill with structured access to full-text scientific libraries, if available, such as the PubMed Connector (https://claude.com/resources/tutorials/using-the-pubmed-connector-in-claude) 
 - Setting specific evidence flags that you are concerned about such as evaluating evidence in light of personalized context (for instance, "I want to know if this condition has been studied in people with high blood pressure")
+- Designing your own symptom inventory tracking prior to using the Skill, and re-using it for continuing searches, or providing a previous log of symptoms as context to Claude (see privacy notes; you should make your own intentional choice about what you are comfortable sharing)
 
 ---
 
-## What this Skill pushes against
+## More detail on the choices in this Skill Design
+
+This skill is opinionatedly designed to use evidence science guardrails in the background, as well as take advantage of Claude's ability to help you create your own personalized patient inventory. It is also structured to push Claude against speculating or "fill in the answer" defaults, to be honest about what it found, what it couldn't find, to provide evidence for how much confidence you should have in competing hypotheses, as well as suggest directions that would confirm or deny working hypotheses or scenarios. 
+
+My aim was to provide a practical thinking tool that strikes a balance between giving you assistance that lightens the load in searching complex literature, but also provides you with clarity and directions for investigation. You are centered as the decision-maker: you control the symptom description, rank questions, and have access to records for further searching or your own cross-verification. I wanted to create a tool that would help people who aren't researchers, scientists or doctors, and who are dealing with something hard may have limited time and energy to wade through complex medical details. Therefore, you can expand or contract your use of the Skill; a quick session of 10 minutes is enough for a review, but you can also run multiple reviews in a row to continue investigating. 
+
+The skill also gives Claude with a structured set of instructions for assessing and flagging key evidence quality indicators, such as missing evidence, understudied conditions, or barriers in care. These are currently set as background references, but you may 
+
+Thinking about your health is high stakes, and we are often cognitively biased toward wanting to find a single answer. To help you get better answers, this Skill is opinionated about holding a high standard of evidence and instructs Claude to try to counter some of the aggressively confirmatory patterns in AI chatbots used for health. In the case of trying to explain symptoms, Claude should explicitly push you to consider multiple hypotheses and evaluate the strength of evidence, as well as generate suggestions of evidence that would strengthen or weaken confidence in the hypothesis.  
+
+This Skill is meant to help you organize your experience and evaluate evidence. It should not be used to tell you what you have or what to do about it.
+
+While I have continually tested the sources this Skill produces and refined the Skill across many disparate searches, it is always possible for AI to be inaccurate. 
+
+You can use the EVALUATION.md file as a starting place to check that this Skill is performing as expected across different scenarios. 
+
+
+## How I thought about guarding against risks
+
+The aim of this skill is not to provide "the answer" or end of a question, but to sharpen your investigatory skills and give you support to advocate for yourself as a patient or on behalf of a patient.
+
+In keeping with that vision, in this Skill, I have used opinionated evidence-based principles to design for eliciting diverse and functionally-relevant descriptions of symptomology, for assessing the clinical literature, and for keeping in mind the complex causality of healthcare decision-making. Going through an iterative process (intake, search for sources, source summaries, evidence red flag evaluation, synthesis) introduces step-by-step thinking and more reflection, while still letting you take advantage of AI assistance. Running multiple reviews will strengthen this process further.
 
 One key risk in using AI for healthcare questions is the model defaults to provide "helpful" confirmatory information and to summarize on behalf of users. Additionally, the models frequently encode poor metascience practices, such as over-extrapolating from a single study, or taking findings as "proven" merely by statistical significance without considering multiple factors such as the type of people studied, the quality and depth of data, and the accuracy of measurements. 
 
-When users simply ask AI models about health in basic prompts, this can lead to models generating answers that overstate evidence, or encourage Claude to try to "read tea leaves" in the symptomology and user descriptions of symptoms. 
+When users simply ask AI models about health in basic prompts, this can lead to models generating answers that overstate evidence, or encourage Claude to try to "read tea leaves" in the symptomology and user descriptions of symptoms. Taking the patient inventory seriously (and the ways that clinical practice fails to include patient accounts) helps deepen the model's search.
 
-Additionally, causality (what leads to what) in health is multivariate, and complex, and difficult to figure out. Many symptoms can look similar but be caused by different things, and the same condition can present differently for different individuals. The aim of this skill is not to provide "the answer" or end of a question, but to sharpen your investigatory skills and help you learn.
-
-In keeping with that vision, in this Skill, I have used opinionated evidence-based principles to design for eliciting diverse and functionally-relevant descriptions of symptomology, for assessing the clinical literature, and for keeping in mind the complex causality of healthcare decision-making. Going through an iterative process (intake, search for sources, source summaries, evidence red flag evaluation, synthesis) introduces step-by-step thinking and more reflection, while still giving you AI assistance. 
+Causality (what leads to what) in health is multivariate, and complex, and difficult to figure out. Many symptoms can look similar but be caused by different things, and the same condition can present differently for different individuals. 
 
 Drawing from the research literature around complex patient care and my experience with evidence thinking, I've made design choices in this skill to push Claude to help you think about competing possibilities, assess the strength of evidence, and generate questions for your healthcare team. It should not generate confirmatory statements or "tell you what you have." In keeping with scientific evidence principles for careful diagnosis, it should help you notice things such as when you are "anchoring" on an initial hypothesis or explanation, and encourage testing alternative hypotheses. 
 
-These design choices are also reflected in: 
+These design choices are reflected in: 
 
 - instructions in the patient inventory step to probe for multidimensional and grounded descriptions of symptomology, such as functional impact
 - sources and context in the symptom-inventory-methodology that acknowledge the gaps frequently seen between patient descriptions of their experience and symptoms, and non-personalized measures which fail to incorporate patient pov 
 - instructions in the evidence assessment step to flag when a user is assuming a diagnosis that has not been clinically confirmed 
 - instructions to suggest that a user rank their most important questions for their healthcare team 
 - instructions to provide the user with clear documentation of the literature search, to encourage source checking and traceability
-
----
-
-## How to use it
-
-This skill is **opt-in only** — it won't activate automatically when you ask health questions. To use it, explicitly tell Claude you'd like to use the informed-patient skill, then describe your situation.
-
-Claude will ask questions before searching. This interview is the foundation for the evidence review. The more specific and accurate your inputs, the more useful the search will be.
 
 ---
 
