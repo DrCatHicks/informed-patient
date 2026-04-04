@@ -178,9 +178,11 @@ I have put a lot of work into making this skill work the way I like, so I may no
 
 If it helps you, I would love to hear about it. I am deeply interested in how we design better tooling for AI in complex social contexts. I always appreciate a shout-out or share of my work in public. You can find more of my writing about psychology and tech, and AI, at my newsletter: [Fight for the Human](https://www.fightforthehuman.com/).
 
+About Me: 
+
 Dr. Cat Hicks
 
-Relevant to this skill and its design, I have significant personal experience navigating complex chronic health conditions, and have personally used this skill to advocate for my own health. 
+Relevant to this skill and its design, I have significant personal experience navigating complex chronic health conditions, and have personally used this skill to advocate for my own health. Most recently I have vetted this skill against months of specialist appoints and it helped me to correct a complex and deeply painful misdiagnosis; that experience is what inspired me to share it publicly.
 
 In my work life I'm a psychological scientist studying software teams and technology work, an author, a public speaker, a research architect, and an empirical interventionist who builds radical research teams that put answers behind questions everyone is asking but few people are gathering real evidence about.
 
