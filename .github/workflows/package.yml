@@ -1,0 +1,31 @@
+name: Package Skill
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create package structure
+        run: |
+          mkdir -p package/references
+          cp informed-patient/skills/informed-patient/SKILL.md package/
+          cp -r informed-patient/references/* package/references/
+
+      - name: Create zip archive
+        run: |
+          cd package
+          zip -r ../informed-patient-skill.zip .
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: informed-patient-skill.zip
+          tag_name: v${{ github.run_number }}
+          name: Skill Package v${{ github.run_number }}
+          generate_release_notes: true

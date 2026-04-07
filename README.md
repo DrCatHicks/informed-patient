@@ -12,6 +12,10 @@ The aim of this skill is not to replace your healthcare team, but to guide your 
 
 ## Installation
 
+This repository provides two installation methods depending on your Claude client:
+
+### Claude Code (Plugin)
+
 This repository is structured as a [Claude Code plugin](https://code.claude.com/docs/en/plugins). To install, run these commands in Claude Code:
 
 1. Add the marketplace:
@@ -27,6 +31,16 @@ This repository is structured as a [Claude Code plugin](https://code.claude.com/
 3. Restart Claude Code to activate.
 
 For more on Claude Code plugins, see [the plugin documentation](https://code.claude.com/docs/en/plugins).
+
+### Claude Desktop & Claude Web (ZIP Upload)
+
+For Claude Desktop or Claude Web, install via the Settings UI:
+
+1. Go to the [Releases](https://github.com/DrCatHicks/informed-patient/releases) page
+2. Download `informed-patient-skill.zip` from the latest release
+3. On Claude Web, navigate to https://claude.ai/customize/skills — or on Claude Desktop, open Settings → Capabilities → Skills
+4. Click Create Skill → Upload a Skill → Select the downloaded zip file
+5. The skill will appear in your skills list and be available for use
 
 ---
 
