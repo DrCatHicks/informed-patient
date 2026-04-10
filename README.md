@@ -38,7 +38,7 @@ For more on Claude Code plugins, see [the plugin documentation](https://code.cla
 
 For Claude Desktop or Claude Web, install via the Settings UI:
 
-1. Go to the [Releases](releases/) page
+1. Go to the [Releases](../../releases/) page
 2. Download `informed-patient-skill.zip` from the latest release
 3. On Claude Web, navigate to https://claude.ai/customize/skills — or on Claude Desktop, open Settings → Capabilities → Skills
 4. Click Create Skill → Upload a Skill → Select the downloaded zip file
