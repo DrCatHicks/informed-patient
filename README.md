@@ -203,6 +203,28 @@ In my work life I'm a psychological scientist studying software teams and techno
 - Software Team & Eng Leadership Consulting: [catharsisinsight.com](https://catharsisinsight.com/)
 - Upcoming Book: [The Psychology of Software Teams (Available July 2026)](https://www.routledge.com/The-Psychology-of-Software-Teams/Hicks/p/book/9781032963389)
 
+## References that helped inform the design of this skill
+
+Cella, D., Riley, W., Stone, A., Rothrock, N., Reeve, B., Yount, S., ... & PROMIS Cooperative Group. (2010). The Patient-Reported Outcomes Measurement Information System (PROMIS) developed and tested its first wave of adult self-reported health outcome item banks: 2005–2008. Journal of clinical epidemiology, 63(11), 1179-1194.
+
+Costello, T. H., Pennycook, G., & Rand, D. G. (2024). Durably reducing conspiracy beliefs through dialogues with AI. Science, 385(6714), eadq1814.
+
+Garratt, A., Schmidt, L., Mackintosh, A., & Fitzpatrick, R. (2002). Quality of life measurement: bibliographic study of patient assessed health outcome measures. Bmj, 324(7351), 1417.
+
+Morel, T., & Cano, S. J. (2017). Measuring what matters to rare disease patients–reflections on the work by the IRDiRC taskforce on patient-centered outcome measures. Orphanet journal of rare diseases, 12(1), 171.
+
+Patrick, D. L., Burke, L. B., Gwaltney, C. J., Leidy, N. K., Martin, M. L., Molsen, E., & Ring, L. (2011). Content validity—establishing and reporting the evidence in newly developed patient-reported outcomes (PRO) instruments for medical product evaluation: ISPOR PRO Good Research Practices Task Force report: part 2—assessing respondent understanding. Value in Health, 14(8), 978-988.
+
+Paterson, C. (1996). Measuring outcomes in primary care: a patient generated measure, MYMOP, compared with the SF-36 health survey. Bmj, 312(7037), 1016-1020.
+
+Pennycook, G., Costello, T. H., & Rand, D. G. (2026). Using Artificial Intelligence to Better Understand Human Intelligence. Current Directions in Psychological Science, 09637214261417960.
+
+Yun, H. S., Kapoor, G., Mackert, M., Kouzy, R., Xu, W., Li, J. J., & Wallace, B. C. (2026). This Treatment Works, Right? Evaluating LLM Sensitivity to Patient Question Framing in Medical QA. arXiv preprint arXiv:2604.05051.
+
+Wiering, B., de Boer, D., & Delnoij, D. (2017). Asking what matters: the relevance and use of patient‐reported outcome measures that were developed without patient involvement. Health Expectations, 20(6), 1330-1341.
+
+Willis, G. B. (2004). Cognitive interviewing: A tool for improving questionnaire design. sage publications.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
