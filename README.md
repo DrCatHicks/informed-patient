@@ -174,14 +174,16 @@ Specific limitations to be aware of:
 
 ## Files
 
-| File                                                           | Purpose                                                       |
-| -------------------------------------------------------------- | ------------------------------------------------------------- |
-| `informed-patient/skills/informed-patient/SKILL.md`            | The skill itself                                              |
-| `informed-patient/references/evidence-hierarchy.md`            | How to explain study types in plain language                  |
-| `informed-patient/references/red-flags.md`                     | The 10 epistemic red flags                                    |
-| `informed-patient/references/symptom-inventory-methodology.md` | Measurement science grounding for Phase 1 symptom elicitation |
-| `EVALUATION.md`                                                | Test scenarios and pass criteria for verifying skill behavior |
-| `LICENSE.txt`                                                  | CC-BY-4.0 license                                             |
+| File                                                                              | Purpose                                                       |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `informed-patient/skills/informed-patient/SKILL.md`                               | The skill itself                                              |
+| `informed-patient/skills/informed-patient/references/evidence-hierarchy.md`       | How to explain study types in plain language                  |
+| `informed-patient/skills/informed-patient/references/red-flags.md`                | The 10 epistemic red flags                                    |
+| `informed-patient/skills/informed-patient/references/symptom-inventory-methodology.md` | Measurement science grounding for Phase 1 symptom elicitation |
+| `informed-patient/skills/informed-patient/references/literature-search-strategy.md`   | Source hierarchy query templates and source-warning conditions for Phase 2 |
+| `informed-patient/skills/informed-patient/references/output-template.md`          | The exact Health Evidence Review document template            |
+| `EVALUATION.md`                                                                   | Test scenarios and pass criteria for verifying skill behavior |
+| `LICENSE.txt`                                                                     | CC-BY-4.0 license                                             |
 
 ---
 

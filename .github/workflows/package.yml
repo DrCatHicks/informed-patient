@@ -16,9 +16,8 @@ jobs:
 
       - name: Create package structure
         run: |
-          mkdir -p package/references
-          cp informed-patient/skills/informed-patient/SKILL.md package/
-          cp -r informed-patient/references/* package/references/
+          mkdir -p package
+          cp -r informed-patient/skills/informed-patient/. package/
 
       - name: Create zip archive
         run: |

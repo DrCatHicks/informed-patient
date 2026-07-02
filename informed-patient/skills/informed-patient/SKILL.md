@@ -1,6 +1,6 @@
 ---
 name: informed-patient
-description: "Guides users through a structured symptom interview, evidence-based literature search, and health evidence review to prepare for medical appointments. Only activate this skill when the user explicitly requests it by name — do not trigger automatically from health questions or symptom mentions."
+description: "Use when the user explicitly asks to use the informed-patient skill to prepare for a medical appointment, organize symptoms before seeing a doctor, or evaluate the evidence behind a diagnosis or treatment. Do not trigger automatically from health questions or symptom mentions alone — requires an explicit request by name."
 license: CC-BY-4.0
 ---
 
@@ -120,7 +120,7 @@ Build the symptom inventory from their answers using structured dimensions:
 - **Temporal patterns:** When symptoms occur, any triggers or relieving factors
 - **Trajectory:** Getting better, worse, stable, fluctuating
 
-These dimensions come from validated clinical assessment approaches. They can help the user offer clinicians structured data instead of a narrative they have to decode during a time-pressured appointment. Refer to `../../references/symptom-inventory-methodology.md` for the methodological grounding behind the elicitation sequence, guidance on functional anchors vs. numeric scales, and when to preserve the patient's own language rather than translating it into clinical terminology.
+These dimensions come from validated clinical assessment approaches. They can help the user offer clinicians structured data instead of a narrative they have to decode during a time-pressured appointment. Refer to `references/symptom-inventory-methodology.md` for the methodological grounding behind the elicitation sequence, guidance on functional anchors vs. numeric scales, and when to preserve the patient's own language rather than translating it into clinical terminology.
 
 **Symptom assessment is non-negotiable on three points — these are required before closing Phase 1:**
 
@@ -179,29 +179,15 @@ In open search mode, adhere to general documentation and evidence assessment gui
 
 **Structured Search strategy:**
 
-Use web search to find evidence across these source types, in priority order:
+Use web search across these source types, in priority order. Full query templates and per-source rationale are in `references/literature-search-strategy.md` — read it before running the search.
 
-1. **Systematic reviews — cast a wide net, not just Cochrane**
+1. **Systematic reviews — cast a wide net, not just Cochrane.** Search Cochrane, then PubMed, NICE, and AHRQ. **If Cochrane or AHRQ return no results, do not silently skip them** — report the null result explicitly; it can itself signal an understudied condition. Silent omission has been a recurring failure in testing.
+2. **Clinical practice guidelines** from major bodies (ACP, NICE, WHO, specialty societies). Note whether they're recent — guidelines over 5-10 years old may not reflect current evidence.
+3. **Peer-reviewed primary research** — if systematic reviews are thin, prioritize RCTs and prospective cohorts over retrospective and case studies.
+4. **FDA/regulatory information** — if treatments are discussed, check approved indications, black box warnings, recent safety communications.
+5. **Patient advocacy organizations** — time-to-diagnosis data and patient experience. Context, not clinical evidence.
 
-   Cochrane is the gold standard for systematic reviews because of its standardized methodology, but it has a meaningful blind spot: it tends to cover high-burden conditions with ample RCT evidence. For rarer conditions, newer conditions, or anything where RCTs are scarce, Cochrane may have nothing — and that's not the same as no systematic review existing. Search all of these:
-   - `Cochrane review [condition]` — Cochrane first. **If this returns no results, do not silently skip it.** Report one of two things: (a) "I found a Cochrane review: [title, URL]" or (b) "I searched for Cochrane reviews and found none for this condition — this could suggest the condition is understudied or complex, and may require more individualized search to verify clinical consensus."
-   - `[condition] systematic review PubMed` or `[condition] systematic review PMID` — PubMed indexes systematic reviews published in any peer-reviewed journal; a well-conducted review in JAMA or The Lancet is strong evidence. If you have a PubMed MCP connector available, use it for more reliable and comprehensive retrieval.
-   - `[condition] NICE guideline` — NICE (UK) produces high-quality evidence reviews as part of guideline development, often covering conditions Cochrane hasn't addressed
-   - `[condition] AHRQ evidence review` — AHRQ (US) commissions systematic reviews via Evidence-Based Practice Centers. **Do not silently skip this.** If the search returns no results, note it explicitly: "I searched for AHRQ reviews and found none for this condition." If strong Cochrane coverage already exists and you're stopping early, still note the skip: "AHRQ not searched — Cochrane and guideline coverage was sufficient." Silent omission has been a recurring failure in testing.
-
-   **Quality check for non-Cochrane systematic reviews:** When using a journal-published systematic review, check whether it reports a risk-of-bias assessment or uses GRADE methodology. If not, treat it as lower confidence than a Cochrane review even though the study type is the same.
-
-   **If systematic reviews are absent:** Search PROSPERO (`[condition] PROSPERO systematic review registered`) — the international register of systematic reviews in progress. Finding a registered in-progress review is itself useful information: tell the user that research is underway but not yet published.
-
-2. **Clinical practice guidelines** — search for current guidelines from major bodies (ACP, NICE, WHO, relevant specialty societies). Search: `[condition] clinical practice guidelines [current year or recent]`. Note whether guidelines are recent — guidelines older than 5-10 years may not reflect current evidence.
-
-3. **Peer-reviewed primary research** — if systematic reviews are thin, search PubMed for the best available primary studies, prioritizing RCTs and prospective cohorts over retrospective and case studies. Search: `[condition] [key symptoms] RCT PubMed` and `[condition] cohort study PubMed`.
-
-4. **FDA/regulatory information** — if treatments are being discussed, check for FDA-approved indications, black box warnings, or recent safety communications. This applies to drug classes as well as specific drug names. Search: `FDA [drug class or drug name] [condition]` (e.g., `FDA ACE inhibitors hypertension` or `FDA lisinopril approval`).
-
-5. **Patient advocacy organizations** — for time-to-diagnosis data, patient-reported experience, and practical information that doesn't appear in clinical literature. Search: `[condition] patient advocacy` or `[condition] foundation`. These are context, not clinical evidence.
-
-**When to stop searching:** Work through the source hierarchy in order, but stop when the evidence base is sufficient to support the user's questions. You do not need to exhaust every source type for every search. Specifically: if Cochrane reviews and current clinical guidelines provide solid coverage, lower-priority sources (primary research, patient advocacy) can be skipped unless they add something the higher-quality sources didn't cover. Use judgment. When you stop early, note it: "I stopped here because the Cochrane and guideline coverage was sufficient — see the informed-patient skill README if you want to force a complete search through all source types."
+**When to stop searching:** Work through the hierarchy in order, but stop once the evidence base is sufficient to support the user's questions. If Cochrane and guideline coverage is solid, lower-priority sources can be skipped unless they'd add something new. Use judgment. When you stop early, say so: "I stopped here because the Cochrane and guideline coverage was sufficient — see the informed-patient skill README if you want to force a complete search through all source types."
 
 **Search term transparency:**
 
@@ -218,7 +204,7 @@ This models good research practice and lets the user course-correct. They may kn
 - How recent it is (e.g., "Published 2023 — relatively current")
 - Relevance to the user's specific situation (e.g., "This studied the exact symptom pattern you described" or "This focused on a different population but the mechanism is relevant")
 
-Refer to `../../references/evidence-hierarchy.md` for how to explain each study type in plain language.
+Refer to `references/evidence-hierarchy.md` for how to explain each study type in plain language.
 
 **The "what I couldn't find" moment:**
 
@@ -244,15 +230,9 @@ Aim for 5-10 key sources that represent the best available evidence. Prioritize 
 
 Do not cite sources you haven't actually found and reviewed through web search. If you can only access an abstract rather than the full text, say so: "I could only see the abstract of this study, so I can't assess the full methodology. The abstract reports [X]."
 
-**Citation integrity — non-negotiable:** Every source in the artifact must include the URL that was returned by the web search tool. Never construct or recall a PMID, DOI, or other identifier from memory — only use identifiers that appeared in an actual search result URL. If a search returned a result but no stable URL is available, describe the source (journal, author, year, title) and note that a direct link could not be retrieved. A source without a verifiable URL is weaker evidence of retrieval than one with a URL — flag it as such rather than omitting it or fabricating an identifier.
+**Citation integrity — non-negotiable:** Every source in the artifact must include the URL that was returned by the web search tool. Never construct or recall a PMID, DOI, or other identifier from memory — only use identifiers that appeared in an actual search result URL. If a search returned a result but no stable URL is available, describe the source (journal, author, year, title) and note that a direct link could not be retrieved. A source without a verifiable URL is weaker evidence of retrieval than one with a URL — flag it as such rather than omitting it or fabricating an identifier.  
 
-**Source-level warnings — use ⚠️ inline:** When a source has a nuanced issue that affects how much weight to give it, flag it directly in the source entry with a ⚠️ and a one-sentence explanation. Do not bury these caveats in prose — make them impossible to miss. Use ⚠️ for:
-
-- Guidelines older than 5 years: ⚠️ _Published [year] — check the link to see if an update has been issued._
-- Abstract-only access: ⚠️ _Only the abstract was available — full methodology not reviewed._
-- No risk-of-bias assessment in a non-Cochrane systematic review: ⚠️ _This review does not report a risk-of-bias assessment — treat as lower confidence than a Cochrane review._
-- Small sample size relative to the claim being made: ⚠️ _[N] participants — findings may not generalize._
-- Population mismatch with the user: ⚠️ _Study population was [X] — relevance to your situation is uncertain._
+**Source-level warnings — use ⚠️ inline:** When a source has a nuanced issue that affects how much weight to give it, flag it directly in the source entry with a ⚠️ and a one-sentence explanation — don't bury it in prose, make it impossible to miss. See `references/literature-search-strategy.md` for the specific warning conditions and phrasing (outdated guidelines, abstract-only access, missing risk-of-bias assessment, small samples, population mismatch).
 
 **Evidence Snapshot (required):**
 
@@ -282,7 +262,7 @@ Based on what the search revealed, apply the red flags framework now, not later.
 
 Surface the 1-3 most relevant flags at this point and carry them into the output artifact. Flags identified here should shape how confidently evidence is presented in Phase 3. A condition with active flags warrants more scrutiny of hypotheses more explicit uncertainty than a well-mapped one.
 
-Refer to `../../references/red-flags.md` for the full set of flags and suggested actions.
+Refer to `references/red-flags.md` for the full set of flags and suggested actions.
 
 ### Phase 3: Evidence Evaluation Template
 
@@ -326,7 +306,7 @@ Do not:
 - Attribute reasoning or why to the user that they have not stated
 
 **Evidence quality assessment:**
-If the user references specific studies, articles, or claims about a condition, help them evaluate using the reference file at `../../references/evidence-hierarchy.md`. Key questions to surface:
+If the user references specific studies, articles, or claims about a condition, help them evaluate using the reference file at `references/evidence-hierarchy.md`. Key questions to surface:
 
 - What kind of study is this? (Explain in plain language what that means for strength of evidence)
 - How many people were studied?
@@ -355,7 +335,7 @@ Their selected questions go into **My Top Questions** in the artifact. All quest
 
 Red flags are applied immediately after the literature search (end of Phase 2), not at the end of the process. This ensures the flags inform how evidence is framed in Phase 3 rather than being appended as an afterthought.
 
-Consult `../../references/red-flags.md` for the full set of 10 epistemic red flags. Based on the user's situation, identify the 1-3 most relevant flags and include them in the output artifact.
+Consult `references/red-flags.md` for the full set of 10 epistemic red flags. Based on the user's situation, identify the 1-3 most relevant flags and include them in the output artifact.
 
 The flags are:
 
@@ -382,114 +362,7 @@ Generate a structured markdown document with these sections and **write it to a 
 
 **Sources and references:** There is a dedicated section near the bottom of the document template to contain all references. Throughout the document, include citations to the reference section so that the patient and clinicians can trace where questions and information came from.
 
-```
-# Health Evidence Review: [Condition/Symptoms]
-Generated: [date]
-
-## Show this document to your doctor
-It is usually a good idea to be fully transparent with your doctors and care team. Bring this document with you to your next appointment, and let them know that you are using it to become a more informed patient, not as a replacement for their clinical work.
-
-## Note to Physician
-### Read this first
-If you're holding this document, your patient wants to be a more effective participant in their own care. They're sharing it with you because it's meant to inform them, not to replace clinical care. This document can give you a picture of their information landscape, which promote better, clearer communication. It may be helpful for you to review this document for this reason, and to correct any errors that have made it into this document. You can find the documents used as sources under the sections "Evidence Snapshot" and "Sources Reviewed".
-
-### Where This Document Came From
-People attempting to get answers about their health deserve structured support for thinking clearly about evidence and integrating their personal experience with the existing medical literature. Many people turn to AI for this assistance.
-
-However, without guardrails, AI-assisted medical searches can create biased reasoning about evidence for users. This document was prepared by AI based on the informed-patient skill which you can find at [https://github.com/DrCatHicks/informed-patient](https://github.com/DrCatHicks/informed-patient). It means to help the user work on being a more effective participant in their own care by introducing explicit steps to encourage over-time symptom awareness. This skill draws from best practices in evidence evaluation such as:
-- Considering alternate hypotheses
-- Considering the strength of evidence for and against a medical hypothesis
-- Evaluating medical research against specific red flags
-- Helping users determine concrete action steps for their next appointment
-
-The aim of this document and the process that created it is to provide a supportive dialogue that helps the user to assess the strength of evidence for various interpretations of their medical experience, not just provide reassurance or raw information. **This skill does not seek to replace the user's medical team, but helps them show up to appointments with organized thinking, sharper questions, and a clearer picture of their own experience.**
-
-## My Symptom Picture
-
-### Current Symptoms
-[Structured inventory with frequency, severity, duration, functional impact, patterns]
-
-### Timeline
-[When it started, how it's changed, key events]
-
-### What's Been Tried
-[Tests, treatments, specialists seen, results]
-
-## What Our Search Covered
-
-### Search Context
-> **What we searched for:** [1-2 sentences describing the symptom picture and diagnostic territory that framed the search — e.g., "New-onset severe episodic headache with sleep disruption, no identified trigger, in someone with no prior headache history. Search focused on: secondary headache red flags and workup, primary headache differential (migraine, cluster, NDPH), and new-onset headache evaluation in primary care."]
->
-> *A single search session cannot cover everything. If you think a relevant condition or angle was missed, note it here and bring it to your next appointment.*
-
-### Evidence Snapshot
-[1-3 bullets orienting the user to the research landscape: how well-studied is this, the strongest relevant finding, and — if research exists — how challenging this is clinically (misdiagnosis rates, common errors, diagnostic delays)]
-
-### Sources Reviewed
-[Each source with plain-language quality tag: study type and what it means, sample size and population, recency, and relevance to this user's specific situation. Include what couldn't be found.]
-
-> **How to verify these sources:** Click each link below. For PubMed links, check that the title and the finding attributed to it match what's described. For guidelines (NICE, AAFP, etc.), check the publication date — if it's more than 5 years old, it may have been updated. If a link is broken or the paper isn't about what this document says it is, treat that source as unverified and don't rely on it.
-
-> **Dig deeper — search these yourself:** Paste any of these into Google or Bing to search the source databases directly. These queries are more reliable when run in a browser than when run by Claude's search tool.
-> - `site:cochranelibrary.com [condition]`
-> - `site:pubmed.ncbi.nlm.nih.gov [condition] systematic review`
-> - `site:nice.org.uk [condition]`
-> - `site:effectivehealthcare.ahrq.gov [condition]`
->
-> *(Replace `[condition]` with the specific terms most relevant to your situation — use the Search Context above as a guide.)*
-
-## Possible Explanations
-
-### Hypothesis 1: [Most likely / user's primary concern]
-- How well it explains my symptoms:
-- What it doesn't explain:
-- What would confirm it:
-- What would rule it out:
-
-### Hypothesis 2: [Alternative]
-[Same structure]
-
-### Hypothesis 3: [Alternative]
-[Same structure]
-
-## Possible Scenarios
-
-### Scenario 1: [Condition remains stable]
-- What the evidence says about this likelihood:
-- What factors in my profile support this:
-- What monitoring would confirm stability:
-
-### Scenario 2: [Condition progresses — early signs]
-- What the evidence says about this likelihood:
-- Risk factors that apply to me:
-- What early detection looks like:
-- What monitoring would catch this:
-
-### Scenario 3: [Complication develops — intervention options]
-- What the evidence says about treatment if this occurs:
-- How early treatment changes outcomes:
-- Questions for my medical team about prevention/monitoring:
-
-## Evidence Evaluation
-[Any specific studies, claims, or information the user wanted to evaluate, with plain-language quality assessment]
-
-## Red Flags to Be Aware Of
-[1-3 relevant flags with plain-language explanation and suggested actions]
-
-## Questions for My Medical Team
-
-### My Top Questions (for this appointment)
-[The 2-3 questions the user selected as highest priority — surfaced prominently so they're impossible to miss during a time-limited appointment]
-
-### Full Question Bank
-[All specific questions generated from the hypotheses, evidence evaluation, and red flags. Concrete and actionable — not generic. Saved here for future appointments or if there's time.]
-
-## References
-[All references drawn on to for all pieces of information and all questions presented in this document, presented in alphabetical order by author name using National Library of Medicine (NLM) citation style]
-
----
-*This document was created as a thinking tool, not medical advice. It's designed to support conversations with your medical team, not replace them. Bring it to your next appointment.*
-```
+The exact section-by-section template — including the Search Context framing, Evidence Snapshot, source verification note, and closing disclaimer — is in `references/output-template.md`. Use it verbatim, filling in each bracketed section.
 
 ## Evidence Literacy Guardrails
 
@@ -497,7 +370,7 @@ These guardrails apply throughout the conversation, not just in the evidence eva
 
 **When the user cites a study or article:**
 
-- Help them identify what kind of evidence it is (refer to `../../references/evidence-hierarchy.md`)
+- Help them identify what kind of evidence it is (refer to `references/evidence-hierarchy.md`)
 - Note sample size and population characteristics
 - Distinguish effect size and practical significance from statistical significance in plain language
 - Respect clinical expertise and clinician judgment as important information separate from research
@@ -537,4 +410,4 @@ Be clear with the user if they're asking for something outside scope:
 
 ## Facilitation Tone
 
-Task-oriented, warm, plainspoken. Someone who respects you enough to give you real tools instead of reassurance. No medical jargon without immediate plain-language translation. No condescension. No hedging so much that the information becomes useless. Respect the user's intelligence, and center their decision-making.
+Task-oriented, warm, plainspoken. Someone who respects the user enough to give them real tools instead of reassurance. Accompany medical jargon with immediate plain-language translation, but also guide the user in thinking about the weight of evidence. No condescension. No hedging so much that the information becomes useless. Respect the user's intelligence, and center their decision-making.
