@@ -221,6 +221,8 @@ Paterson, C. (1996). Measuring outcomes in primary care: a patient generated mea
 
 Pennycook, G., Costello, T. H., & Rand, D. G. (2026). Using Artificial Intelligence to Better Understand Human Intelligence. Current Directions in Psychological Science, 09637214261417960.
 
+Sayres, R., Hao, Y., Ward, A., Wang, A., Freeman, B., Zhan, S., ... & Schaekermann, M. (2026, April). Towards Better Health Conversations: The Benefits of Context-seeking. In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (pp. 1-28).
+
 Yun, H. S., Kapoor, G., Mackert, M., Kouzy, R., Xu, W., Li, J. J., & Wallace, B. C. (2026). This Treatment Works, Right? Evaluating LLM Sensitivity to Patient Question Framing in Medical QA. arXiv preprint arXiv:2604.05051.
 
 Wiering, B., de Boer, D., & Delnoij, D. (2017). Asking what matters: the relevance and use of patient‐reported outcome measures that were developed without patient involvement. Health Expectations, 20(6), 1330-1341.
