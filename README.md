@@ -1,12 +1,16 @@
 # Informed Patient
 
-This Claude Skill provides a framework to help you use Claude to research medical evidence to inform specific health questions, primarily designed around use cases like trying to understand and organize questions about symptoms, preparing for an upcoming medical appointment, and gathering evidence for either differential diagnosis questions or condition progression.
+This Claude Skill provides a framework to help you use Claude to research medical evidence to inform specific health questions, primarily designed around use cases like trying to understand and organize questions about symptoms, preparing for an upcoming medical appointment, and gathering evidence for either differential diagnosis questions or condition progression. Users have also been successful at using these instructions as structured prompts or workflows with any AI model, including local models. 
 
 When you ask a medical question, Claude will walk you through a semi-structured cognitive interview to elicit context for its search, then conduct a search following a set of guidelines for evidence robustness. The skill provides two potential search "modes": by default it uses a more structured search across a defined evidence source hierarchy, but can use an open search mode for scenarios where you raise a more complex questions that falls between conditions, when you want a more exploratory mode, or when the opinionated search results are thin.
 
 Alongside searching and synthesizing sources, Claude will weigh the strength of evidence or relevant concerns according to a set of evidence "red flags." The results will be shared in a "health evidence review," including sources, search terms, and evidence red flags to be aware of, and questions generated from the exercise to bring to your healthcare team.
 
 The aim of this skill is not to replace your healthcare team, but to guide your use of AI as a structured search tool around health information, help you advocate for yourself and your needs, and help you become an "informed patient."
+
+# Disclaimer 
+
+Nothing here is intended as medical advice. This skill and all of the text in this repo is provided in order to give you an example to work from, and in order to provide users with suggestions for technical help in navigating how language models interact with the scientific literature and web information about general health topics. Do not make health decisions based on this data or any output from this skill without consulting a qualified clinician.
 
 ---
 
@@ -43,6 +47,12 @@ For Claude Desktop or Claude Web, install via the Settings UI:
 3. On Claude Web, navigate to https://claude.ai/customize/skills — or on Claude Desktop, open Settings → Capabilities → Skills
 4. Click Create Skill → Upload a Skill → Select the downloaded zip file
 5. The skill will appear in your skills list and be available for use
+
+# Downloading your own Health Records to use
+
+You may want to download your own health records, which can significantly improve the utility of this skill. Nothing in this skill requires a health record, but if you wish to do this, JT Perry has created a tool to make it easier for individuals to download their health records (which in the US, you have a right to access because of the 21st Century Cures Act (Pub. L. No. 114-255). You can [see his tool here](https://health.circlejtp.me/), or [see the repo](https://github.com/jtperry/health-record-mcp). Please review the warnings and think carefully about how you feel comfortable accessing and using this sensitive information, as you will be solely responsible for the risks. 
+
+You may also wish to download your health record in order to analyze it yourself, entirely separately from AI, and filter details in it for your use of this skill.  
 
 ---
 
