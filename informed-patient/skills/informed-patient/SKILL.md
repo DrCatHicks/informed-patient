@@ -136,7 +136,7 @@ For all other dimensions, use judgment: if the user gives a curt or vague answer
 
 **Classification criteria and multi-system review (conditional):** Read `references/classification-criteria.md` when any of these is true:
 
-- The user wonders whether they have a condition, or asks how one is diagnosed or whether they fit its criteria, in any phrasing. Answer this when it is asked. If the diagnosis is already confirmed, the reference says how to redirect.
+- The user wonders whether they have a condition, or asks how one is diagnosed or whether they fit its criteria, in any phrasing. Answer this when it is asked. If the diagnosis is already confirmed, the reference says how to handle a patient who questions it.
 - A diagnosis has been suggested but not confirmed, or is confirmed and the user asks how it is graded (severity or subtype).
 - The symptom picture, including the co-occurrence answers, forms a recognizable cluster, even though the user named no condition. Hold this until the transition into Phase 2 and include it in the search framing; do not announce a framework mid-interview.
 - The user asks for a broad, all-systems look, or their picture spans clearly unrelated body systems.
@@ -147,7 +147,7 @@ A symptom mentioned with no wondering attached does not trigger it. Naming a fra
 
 After the interview and before evidence evaluation, conduct a structured mini literature review. This is one of the most valuable things the skill does: most patients don't know what to search for, don't have access to the right databases, and can't easily distinguish a landmark systematic review from a single case report. Claude does this legwork and shows its work.
 
-**Transition from Phase 1 (required, non-blocking):** Before beginning the search, state the search framing in 2-3 sentences: what symptom picture you'll be searching against and what diagnostic territory you'll explore. Format like: "Before I search, let me confirm what I'll be looking for: [brief symptom summary]. I'll focus on [conditions/territory]. Correct me if I'm missing something — otherwise I'll get started." Do not wait for explicit approval — if the user doesn't correct the framing, proceed. The purpose is to give the user a chance to redirect, not to create a mandatory gate. Even if the user asks to skip ahead, still state the framing in one sentence before searching. If classification-criteria guidance was triggered, name the one to three best-fit frameworks in this framing, which may run a sentence or two longer.
+**Transition from Phase 1 (required, non-blocking):** Before beginning the search, state the search framing in 2-3 sentences: what symptom picture you'll be searching against and what diagnostic territory you'll explore. Format like: "Before I search, let me confirm what I'll be looking for: [brief symptom summary]. I'll focus on [conditions/territory]. Correct me if I'm missing something — otherwise I'll get started." Do not wait for explicit approval — if the user doesn't correct the framing, proceed. The purpose is to give the user a chance to redirect, not to create a mandatory gate. State the framing and continue straight into the search in the same turn; do not end your message to wait for a reply. Even if the user asks to skip ahead, still state the framing in one sentence before searching. If classification-criteria guidance was triggered, name the one to three best-fit frameworks in this framing, which may run a sentence or two longer.
 
 **Tell the user what's happening:**
 
