@@ -271,8 +271,7 @@ criteria — endometriosis, diagnosed primarily through imaging and surgery
 rather than a symptom checklist, is a clear example. When this is the case,
 say so explicitly rather than omitting the topic or implying a framework
 exists where none does: "There isn't a single agreed symptom-based framework
-for this — diagnosis usually depends on [imaging/testing/etc.]. That's worth
-knowing going in."
+for this, and diagnosis usually depends on [clinical judgment/imaging/testing/etc.]."
 
 Do not assemble a symptom checklist from memory to stand in for criteria. The
 patient's own symptom inventory (frequency, severity, duration, functional
