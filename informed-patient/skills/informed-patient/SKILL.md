@@ -43,6 +43,8 @@ People who are:
 
 The skill helps people evaluate evidence and prepare questions. It can help a user assess the research evidence behind a treatment, but do not recommend a treatment. Always direct a user to develop a specific actionable question about a treatment.
 
+**Not waiting for the appointment:** If the user's own account includes a safety incident (near-misses while driving, fainting, a fall) or an unexplained, unintended change (for example, weight loss without trying), and they have not said a clinician already knows, say once, in one plain sentence, that this is worth telling a clinician now instead of holding it for the appointment. Then continue the structured work. The sentence is about not waiting, not about what it might mean: name no cause, rate no urgency, and give no advice on what to do in the meantime.
+
 ## Opening the conversation
 
 Always ask before starting: "Would you like to do a quick exercise to shape your preparation for your next appointment? About 10-15 minutes."
@@ -132,11 +134,20 @@ These dimensions come from validated clinical assessment approaches. They can he
 
 For all other dimensions, use judgment: if the user gives a curt or vague answer and the detail seems clinically relevant, ask one follow-up. Do not interrogate. If they decline or don't know, move on.
 
+**Classification criteria and multi-system review (conditional):** Read `references/classification-criteria.md` when any of these is true:
+
+- The user wonders whether they have a condition, or asks how one is diagnosed or whether they fit its criteria, in any phrasing. Answer this when it is asked. If the diagnosis is already confirmed, the reference says how to redirect.
+- A diagnosis has been suggested but not confirmed, or is confirmed and the user asks how it is graded (severity or subtype).
+- The symptom picture, including the co-occurrence answers, forms a recognizable cluster, even though the user named no condition. Hold this until the transition into Phase 2 and include it in the search framing; do not announce a framework mid-interview.
+- The user asks for a broad, all-systems look, or their picture spans clearly unrelated body systems.
+
+A symptom mentioned with no wondering attached does not trigger it. Naming a framework is never applying it, and it does not replace the competing hypotheses in Phase 3.
+
 ### Phase 2: Literature Search
 
 After the interview and before evidence evaluation, conduct a structured mini literature review. This is one of the most valuable things the skill does: most patients don't know what to search for, don't have access to the right databases, and can't easily distinguish a landmark systematic review from a single case report. Claude does this legwork and shows its work.
 
-**Transition from Phase 1 (required, non-blocking):** Before beginning the search, state the search framing in 2-3 sentences: what symptom picture you'll be searching against and what diagnostic territory you'll explore. Format like: "Before I search, let me confirm what I'll be looking for: [brief symptom summary]. I'll focus on [conditions/territory]. Correct me if I'm missing something — otherwise I'll get started." Do not wait for explicit approval — if the user doesn't correct the framing, proceed. The purpose is to give the user a chance to redirect, not to create a mandatory gate. Even if the user asks to skip ahead, still state the framing in one sentence before searching.
+**Transition from Phase 1 (required, non-blocking):** Before beginning the search, state the search framing in 2-3 sentences: what symptom picture you'll be searching against and what diagnostic territory you'll explore. Format like: "Before I search, let me confirm what I'll be looking for: [brief symptom summary]. I'll focus on [conditions/territory]. Correct me if I'm missing something — otherwise I'll get started." Do not wait for explicit approval — if the user doesn't correct the framing, proceed. The purpose is to give the user a chance to redirect, not to create a mandatory gate. Even if the user asks to skip ahead, still state the framing in one sentence before searching. If classification-criteria guidance was triggered, name the one to three best-fit frameworks in this framing, which may run a sentence or two longer.
 
 **Tell the user what's happening:**
 
@@ -230,7 +241,7 @@ Aim for 5-10 key sources that represent the best available evidence. Prioritize 
 
 Do not cite sources you haven't actually found and reviewed through web search. If you can only access an abstract rather than the full text, say so: "I could only see the abstract of this study, so I can't assess the full methodology. The abstract reports [X]."
 
-**Citation integrity — non-negotiable:** Every source in the artifact must include the URL that was returned by the web search tool. Never construct or recall a PMID, DOI, or other identifier from memory — only use identifiers that appeared in an actual search result URL. If a search returned a result but no stable URL is available, describe the source (journal, author, year, title) and note that a direct link could not be retrieved. A source without a verifiable URL is weaker evidence of retrieval than one with a URL — flag it as such rather than omitting it or fabricating an identifier.  
+**Citation integrity — non-negotiable:** Every source in the artifact must include the URL that was returned by the web search tool. Never construct or recall a PMID, DOI, or other identifier from memory — only use identifiers that appeared in an actual search result URL. If a search returned a result but no stable URL is available, describe the source (journal, author, year, title) and note that a direct link could not be retrieved. A source without a verifiable URL is weaker evidence of retrieval than one with a URL — flag it as such rather than omitting it or fabricating an identifier. Frameworks named in `references/classification-criteria.md` are search pointers, not citations: retrieve them and cite the URL the search returned.  
 
 **Source-level warnings — use ⚠️ inline:** When a source has a nuanced issue that affects how much weight to give it, flag it directly in the source entry with a ⚠️ and a one-sentence explanation — don't bury it in prose, make it impossible to miss. See `references/literature-search-strategy.md` for the specific warning conditions and phrasing (outdated guidelines, abstract-only access, missing risk-of-bias assessment, small samples, population mismatch).
 
@@ -254,7 +265,7 @@ The goal is to help the user immediately understand whether they're dealing with
 
 **Red flags check (run immediately after the literature search, before Phase 3):**
 
-Based on what the search revealed, apply the red flags framework now, not later. The literature search is itself the primary input for flags 1, 7, and 9:
+Based on what the search revealed, apply the red flags framework now, not later. The literature search is itself the primary input for flags 1, 7, and 10:
 
 - **Flag 1 (Understudied condition):** Did the search return few or no systematic reviews or RCTs? Say so explicitly and flag it.
 - **Flag 7 (Long time-to-diagnosis):** Did the literature or advocacy sources mention a long diagnostic delay for this condition?
@@ -294,7 +305,7 @@ For each hypothesis, help the user think through:
 - **Prior probability:** How common is this condition in people like you? (Base rates matter. However, note carefully where base rates are not well known)
 - **Evidence that increases probability:** Which of your symptoms, test results, or known history make this more likely?
 - **Evidence that decreases probability:** What doesn't fit? What would you expect to see that you don't?
-- **What would update your confidence most?** What test, finding, or specialist evaluation would most change how likely this explanation seems? What would we look for that would make us think we need to explore a different diagnosis?
+- **What would update your confidence most?** What test, finding, or specialist evaluation would most change how likely this explanation seems? What would we look for that would make us think we need to explore a different diagnosis? If a classification framework was retrieved, point to it here as what a clinician would evaluate, framed as a question for the clinician, not a checklist to score yourself against.
 
 Explain this in plain language: "Let's think about what makes each possibility more or less likely given what you know."
 
@@ -402,7 +413,7 @@ These guardrails apply throughout the conversation, not just in the evidence eva
 
 Be clear with the user if they're asking for something outside scope:
 
-- **Does not diagnose.** "I can help you organize your thinking and evaluate evidence, but I can't tell you what you have."
+- **Does not diagnose.** "I can help you organize your thinking and evaluate evidence, but I can't tell you what you have." Naming a classification framework is not applying it.
 - **Does not recommend treatments.** "I can help you understand what the evidence says about a treatment, but the decision is between you and your medical team."
 - **Does not replace clinicians.** "The goal here is to help you show up to appointments more prepared, not to figure this out on your own."
 - **Does not provide emotional support.** If the user needs processing space, acknowledge that gently and suggest they talk with someone who can provide that. Then offer to continue the structured work when they're ready.

@@ -17,6 +17,9 @@ Generated: [date]
 ### What's Been Tried
 [Tests, treatments, specialists seen, results]
 
+### Additional Systems Reviewed
+[Include only if a multi-system review was done. What the review surfaced, in the user's own words, by system. This is reference gathered, not an interpretation of their individual case.]
+
 ## What Our Search Covered
 
 ### Search Context
@@ -74,6 +77,9 @@ Generated: [date]
 
 ## Evidence Evaluation
 [Any specific studies, claims, or information the user wanted to evaluate, with plain-language quality assessment]
+
+## How Clinicians Classify Conditions: what we explored
+[Include only if `references/classification-criteria.md` was consulted. For each framework: its name, what it classifies, a link to the source retrieved, and whether it is disputed or in parallel use. If no agreed criteria exist, say so and name what diagnosis depends on instead. If the source is not freely accessible, say that. Close with: "This describes what clinicians might typically use to evaluate whether a symptom picture like this one fits a certain classification criteria. Individual cases can always differ from the classification critera. does not mean the classification applies to you, and should not be taken as proof that it does. It is also possible for clinical practice to differ from what this tool was able to access in published research. How well a classification criteria might fit your case is a question for your clinician."]
 
 ## Red Flags to Be Aware Of
 [1-3 relevant flags with plain-language explanation and suggested actions]

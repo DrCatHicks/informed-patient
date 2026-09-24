@@ -27,7 +27,7 @@ Surface 1-3 of the most relevant flags per user situation. Each flag should be a
 **Suggested action:** "If relevant, mention awareness of these disparities to your clinician. Many clinicians actively work to counteract these patterns when they're made visible."
 
 ### 5. Exclusion diagnosis
-**What it means:** This condition is diagnosed by ruling everything else out rather than by a definitive test. There's no single biomarker or scan that confirms it.
+**What it means:** This condition is diagnosed by ruling everything else out rather than by a definitive test. There's no single biomarker or scan that confirms it. Some such conditions have no agreed symptom-based criteria at all (see `references/classification-criteria.md`); that absence is worth naming.
 **Why it matters:** Exclusion diagnoses are inherently uncertain. The diagnosis is only as good as the thoroughness of the workup that preceded it. If the differential was too narrow, the exclusion may be premature.
 **Suggested action:** "Ask your clinician: What conditions did we rule out to reach this diagnosis? Are there any we haven't tested for yet? What would change your confidence in this diagnosis?"
 
@@ -52,9 +52,9 @@ Surface 1-3 of the most relevant flags per user situation. Each flag should be a
 **Suggested action:** "Ask your clinician: How will we know if this treatment is working for me specifically? What's the timeline for seeing a response, and what's the plan if I don't respond as expected? Are there factors about my situation that might predict how I'll respond?"
 
 ### 10. Metascience concerns
-**What it means:** There are controversies in the research literature itself — conflicting meta-analyses, clinical guidelines that haven't been updated to reflect recent evidence, known issues with replication, or documented gaps between evidence and clinical practice.
+**What it means:** There are controversies in the research literature itself such as conflicting meta-analyses, clinical guidelines that haven't been updated to reflect recent evidence, known issues with replication, or documented gaps between evidence and clinical practice. This includes diagnostic classification frameworks that are disputed, superseded, or in parallel use (see `references/classification-criteria.md`).
 **Why it matters:** Sometimes the problem isn't that evidence is missing, but rather that the evidence base itself is contested, or that clinical practice hasn't caught up with the best available evidence. This may mean you may encounter conflicting recommendations, and it may be particularly important for patients who are understudied or in a context with less access to cutting-edge clinical care to be aware of these issues.
-**Suggested action:** "Ask your clinician: Are there recent studies or updated guidelines that might change the approach? If you get conflicting advice from different specialists, ask each one what evidence they're basing their recommendation on."
+**Suggested action:** "Ask your clinician: Are there recent studies or updated guidelines that might change the approach? Is there anything about how you see this condition in practice that you think isn't necessarily reflected in guidelines yet? If you get conflicting advice from different specialists, ask each one what evidence they're basing their recommendation on."
 
 ## How to use these flags
 

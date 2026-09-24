@@ -69,6 +69,7 @@ At the end of the exercise, output is saved in a **Health Evidence Review** that
 - A verification note so you can check the sources yourself
 - An Evidence Snapshot with 1-3 bullets on how well-studied a condition is, the strongest relevant finding(s), and clinical challenges
 - Competing scenarios or hypotheses for your symptom picture, with evidence for and against each
+- Where relevant, the classification frameworks clinicians use to evaluate a similar symptom picture (named for you to bring to your clinician, never applied to you)
 - Epistemic red flags relevant to your situation (e.g., understudied condition, long time-to-diagnosis, self-report as primary evidence)
 - A prioritized question list for your appointment, ranked by you
 
@@ -181,6 +182,7 @@ Specific limitations to be aware of:
 | `informed-patient/skills/informed-patient/references/red-flags.md`                | The 10 epistemic red flags                                    |
 | `informed-patient/skills/informed-patient/references/symptom-inventory-methodology.md` | Measurement science grounding for Phase 1 symptom elicitation |
 | `informed-patient/skills/informed-patient/references/literature-search-strategy.md`   | Source hierarchy query templates and source-warning conditions for Phase 2 |
+| `informed-patient/skills/informed-patient/references/classification-criteria.md`  | Classification frameworks clinicians use for symptom clusters, and the optional multi-system review |
 | `informed-patient/skills/informed-patient/references/output-template.md`          | The exact Health Evidence Review document template            |
 | `EVALUATION.md`                                                                   | Test scenarios and pass criteria for verifying skill behavior |
 | `LICENSE.txt`                                                                     | CC-BY-4.0 license                                             |
@@ -203,7 +205,7 @@ In my work life I'm a psychological scientist studying software teams and techno
 
 - Website: [drcathicks.com](https://www.drcathicks.com/)
 - Software Team & Eng Leadership Consulting: [catharsisinsight.com](https://catharsisinsight.com/)
-- Upcoming Book: [The Psychology of Software Teams (Available July 2026)](https://www.routledge.com/The-Psychology-of-Software-Teams/Hicks/p/book/9781032963389)
+- My Book: [The Psychology of Software Teams (out now!](https://www.routledge.com/The-Psychology-of-Software-Teams/Hicks/p/book/9781032963389)
 
 ## References that helped inform the design of this skill
 
