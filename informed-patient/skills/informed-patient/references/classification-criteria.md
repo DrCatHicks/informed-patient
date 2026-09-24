@@ -15,7 +15,7 @@ bring it to their own clinician.
 ## When to consult this guidance
 
 Consult this file once the branching and co-occurrence questions from Phase 1
-have surfaced a real symptom picture — not from the first symptom mentioned.
+have surfaced a real symptom picture, not from the first symptom mentioned.
 Invoking a classification framework before enough is known risks the
 anchoring risk already named in the Red Flags framework (flag 3): narrowing
 the rest of the interview around a framework chosen too early.
@@ -112,8 +112,7 @@ are deliberately left out of this file so they can't be lifted from it.
 
 If the source is inaccessible — paywalled, moved, or the entry says none
 exists — search for an official freely accessible version before falling
-back to a summary, the same posture already used elsewhere for an
-inaccessible source.
+back to a summary.
 
 Before presenting a framework, do one quick check for whether it has since
 been revised, superseded, or is actively disputed. This is a lightweight
