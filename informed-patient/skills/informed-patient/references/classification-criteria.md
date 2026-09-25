@@ -117,7 +117,7 @@ Do not assemble a symptom checklist from memory to stand in for criteria. The pa
 
 ## When the criteria weren't built on people like the patient
 
-Classification frameworks are derived and validated in particular groups: often clinic or specialist cohorts, and often without adequate representation by sex, race, age, complex comorbin conditions or body size, or of people whose condition is still under-recognized.
+Classification frameworks are derived and validated in particular groups: often clinic or specialist cohorts, and often without adequate representation by sex, race, age, and complex comorbid conditions, or of people whose condition is still under-recognized.
 
 As part of the one-search check before presenting a framework, note who the criteria were derived and validated in, where the source reports it. If there is evidence that the patient has shared a characteristic that a criteria was developed without enough input from, say so and cite the source for it: "When I was reviewing [source], I noted these criteria were built mostly with data from [group] and may underrepresent [conditions/groups]. That means a result that does or doesn't fit these criteria could be weaker evidence for someone outside that group."
 
