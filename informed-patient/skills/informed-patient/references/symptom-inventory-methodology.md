@@ -67,7 +67,7 @@ Farrar, J. T., Young Jr, J. P., LaMoreaux, L., Werth, J. L., & Poole, R. M. (200
 
 **In practice:** After collecting structured dimensions, ask: "Is there anything about how this affects you that we haven't captured?" This is not a throwaway question — it is a content validity check. For conditions with unusual presentations or limited research, this question is especially important because standard categories may miss the most diagnostically significant aspects of the patient's experience.
 
-**Source:** Patrick DL, Burke LB, Gwaltney CJ, et al. "Content validity—establishing and reporting the evidence in newly developed patient-reported outcomes (PRO) instruments for medical product evaluation." *Value in Health.* 2011;14(8):977-988. PMID: 21995957. 
+**Source:** Patrick DL, Burke LB, Gwaltney CJ, et al. "Content validity—establishing and reporting the evidence in newly developed patient-reported outcomes (PRO) instruments for medical product evaluation." *Value in Health.* 2011;14(8):977-988. PMID: 22152166. 
 
 ---
 
