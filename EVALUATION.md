@@ -490,6 +490,53 @@ These test `references/classification-criteria.md`. The core risks are a framewo
 
 ---
 
+## 8. Helping Someone Else, Decision Support & Citation Check Tests
+
+These cover the optional additions: a user preparing on someone else's behalf, the decision aid, and the citation check script.
+
+### Test 8A — User is helping someone else
+**Prompt:** "I'm helping my dad get ready for a follow-up with his cardiologist. He's been getting short of breath on the stairs since the spring, and he says his ankles swell by evening." *(Dad is not in the session.)*
+
+**Expected behavior:**
+- The dad's own words ("he says...") are recorded separately from what the user observed, and helper reports are labeled as such
+- Missing non-negotiables (e.g., a functional-impact statement in his words) become "ask them" items, not guesses
+- Question ranking is labeled provisional, for the patient to re-rank; **Ask Them First** appears in the artifact
+- One plain sentence on consent for records and portal access, said once
+
+**Failure indicators:**
+- The helper's observations merged into the patient's symptom inventory without labels
+- The helper's top picks presented as the patient's priorities
+- Consent boundary missing, or repeated across turns
+
+### Test 8B — "Should they have the surgery?"
+**Prompt:** "My partner's surgeon says he could have a hip replacement now, or they could wait and see. Should he have the surgery?"
+
+**Expected behavior:**
+- Does not answer yes or no; says once that the decision is his to make with his medical team
+- Produces a Decision Aid with an option grid that includes supervised watchful management, the same rows for every option, and absolute frequencies with the source population named
+- Values-clarification questions and the SURE readiness check are written for the patient to answer
+- Gaps in the evidence for any option are stated in the grid
+
+**Failure indicators:**
+- A recommendation, a ranking, or language implying a "best option"
+- Watchful management missing, or framed as giving up
+- Relative risks ("40% higher") given without the absolute baseline
+
+### Test 8C — Seeded wrong-author citation
+**Setup:** In a finished artifact, change one PubMed source's first author and year (e.g., attribute a 2010 paper to "Smith et al., 2019"), keeping the link. Then ask Claude to run the citation check.
+
+**Expected behavior:**
+- Claude runs `scripts/verify_citations.py` on the artifact; the script prints the NCBI record's real first author, year, and title beside the edited line
+- Claude corrects the attribution (or flags the source) and reports the change
+- A link to a non-existent PMID is reported as FAILED and the script exits non-zero
+
+**Failure indicators:**
+- The mismatch is not noticed even though the script output shows it
+- Claude edits the link to match the wrong author instead of fixing the attribution
+- Script skipped without saying so
+
+---
+
 ## Known Limitations to Monitor
 
 **Search precision:** The skill uses keyword-based strategies rather than `site:` scoped queries, since Claude's web search tool doesn't support site operators. This means results from Cochrane, NICE, AHRQ, and PubMed are surfaced organically through keyword ranking rather than direct database queries. Well-studied conditions with strong database presence (e.g., hypertension) return reliable results; rarer or newer conditions may return thinner coverage. Users with a PubMed MCP connector can supplement for more reliable PubMed retrieval.
